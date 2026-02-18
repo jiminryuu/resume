@@ -31,5 +31,9 @@ SOCIAL = (
 
 DEFAULT_PAGINATION = False
 
+# Static paths will be copied without parsing their content
+STATIC_PATHS = ['images', 'extra']
+EXTRA_PATH_METADATA = {'extra/.nojekyll': {'path': '.nojekyll'},}
+
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+RELATIVE_URLS = True
