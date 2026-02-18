@@ -1,7 +1,7 @@
 # How to Host a Professional Resume Using Pelican and GitHub Pages
 
 ## Statement of Purpose
-This is a simple guide on how to create, format, and host a professional resume website using modern technical writing tools. By following these instructions, you will learn to apply principles from Andrew Etter’s *Modern Technical Writing*, specifically the use of lightweight markup languages, distributed version control, and static site generators. This guide assumes basic command line knowledge but no prior experience with these tools. This guide is for anyone of any skill level, interested in hosting static sites.
+This is a simple guide on how to create, format, and host a professional resume website using modern technical writing tools. By following these instructions, you will learn to apply principles from Andrew Etter’s *Modern Technical Writing*, specifically the use of lightweight markup languages, distributed version control, and static site generators. This guide assumes basic command line knowledge but no prior experience with these tools. This guide is for anyone of any skill level interested in hosting static sites.
 
 ## Prerequisites
 To complete this tutorial, you need the following:
@@ -21,7 +21,7 @@ To complete this tutorial, you need the following:
 pip install pelican markdown
 ```
 **Context & Principle:**
-Etter advocates for the principle to **"Make Static Websites"** (Ch 3) because they are faster, more secure, and easier to host than dynamic systems like WordPress. Unlike dynamic sites requiring databases, Pelican pre-builds your content into standard HTML files. This workflow separates content from complex infrastructure, ensuring your resume loads instantly and remains secure. By using Pelican, you focus on writing rather than server maintenance.
+Etter advocates for the principle: **"Make Static Websites"** because they are faster, more secure, and easier to host than dynamic systems like WordPress. Unlike dynamic sites requiring databases, Pelican pre-builds your content into standard HTML files. This keeps your writing separate from the server (the computer that hosts your site). By using Pelican, you focus on writing rather than server maintenance.
 
 ### 2. Create a Directory for Your Project
 **Action:** Create a folder named `my-resume` and navigate into it:
@@ -29,8 +29,6 @@ Etter advocates for the principle to **"Make Static Websites"** (Ch 3) because t
 mkdir my-resume
 cd my-resume
 ```
-**Context & Principle:**
-Organization is key. By creating a dedicated directory, you establish a clean workspace for your "source tree." In static site generation, your project folder contains the "source" (content and config), while a separate `output` folder contains the "built" website. You write the source to generate the site.
 
 ### 3. Initialize the Project Structure
 **Action:** Run the quickstart command:
@@ -38,10 +36,10 @@ Organization is key. By creating a dedicated directory, you establish a clean wo
 pelican-quickstart
 ```
 **Context & Principle:**
-Etter emphasizes **automation and structure**. `pelican-quickstart` scaffolds your project with standard configuration files like `pelicanconf.py`. This aligns with "treating documentation like code." Just as developers use frameworks, technical writers use structured projects. This ensures anyone viewing your project understands where content (`content/`) and settings live, making it maintainable.
+Etter emphasizes **"structure"**. `pelican-quickstart` initializes your project with standard configuration files like `pelicanconf.py`. This aligns with "treating documentation like code." Just as developers use frameworks, technical writers use structured projects. This ensures anyone viewing your project understands where content (`content/`) and settings live, making it maintainable.
 
 ### 4. Draft Your Resume Using Markdown
-**Action:** Create `resume.md` inside `content\pages` and write your resume using Markdown:
+**Action:** Create `resume.md` inside `content/pages` and write your resume using Markdown:
 ```markdown
 Title: Resume
 Date: 2026-02-18
@@ -51,15 +49,15 @@ Date: 2026-02-18
 *   Finance Manager...
 ```
 **Context & Principle:**
-This applies Etter's principle to **"Use Lightweight Markup"** (Ch 3). Binary formats like `.docx` are inefficient for documentation. Markdown is human-readable text that converts easily to HTML. It is future-proof and "diff-able" in version control, allowing you to track line-by-line changes. You strip away formatting distractions to focus on substance, while Pelican handles the styling.
+This applies Etter's principle to **"Use Lightweight Markup"**. Binary formats like `.docx` are inefficient for documentation. Markdown is human-readable text that converts easily to HTML. It is future-proof and "diff-able" in version control, allowing you to track line-by-line changes. You strip away formatting distractions to focus on substance, while Pelican handles the styling.
 
-### 5. Initialize a Git Repository
+### 5. Initialize a Git Repository (folder)
 **Action:** Initialize a Git repository to track your changes:
 ```bash
 git init
 ```
 **Context & Principle:**
-Etter's principle to **"Use Distributed Version Control"** (Ch 3) is critical. Git creates a rigorous history of your work, allowing you to save "snapshots" (commits). If you make a mistake, you can revert instantly. Unlike "Track Changes," Git facilitates safe experimentation and collaboration without overwriting files.
+Etter's principle to **"Use Distributed Version Control"** is critical. Git creates a rigorous history of your work, allowing you to save "snapshots" (commits). If you make a mistake, you can revert instantly. Unlike "Track Changes," Git facilitates safe experimentation and collaboration without overwriting files.
 
 ### 6. Commit Your Changes
 **Action:** Save your progress to the repository history:
@@ -68,52 +66,72 @@ git add .
 git commit -m "Initial commit of resume source code"
 ```
 **Context & Principle:**
-"Committing" saves a meaningful milestone. By writing a clear message, you document the *history* of your document. This transforms writing from a linear stream into a managed lifecycle where every update is recorded.
+This fulfills Etter's principle **"Catalogue the Diff"**. "Committing" saves a meaningful milestone. By writing a clear message, you document the *history* of your document.
 
 ### 7. Create a Repository on GitHub
-**Action:**  Create a new public repository named `resume` on GitHub.com:
+**Action:**  Create a new public repository named `resume` on GitHub.com.
 **Context & Principle:**
-This involves using a **"Forge"**. Etter explains forges are the social hubs of development. Hosting your project on a forge makes it accessible, secure, and open for collaboration, moving your resume from a local file to a web project.
+This involves using a **"Forge"** (a website that hosts code). Etter explains forges are the social hubs of development. Hosting your project on a forge makes it accessible, secure, and open for collaboration, moving your resume from a local file to a web project.
 
-### 8. Push Your Code to the Forge
-**Action:** Link your local folder to GitHub and upload your code (replace `USERNAME` with yours):
+### 8. Link Your Local Folder to GitHub
+**Action:** Link your local folder to GitHub (replace `USERNAME` with yours):
 ```bash
 git remote add origin https://github.com/USERNAME/resume.git
-git branch -M main
-git push -u origin main
 ```
 **Context & Principle:**
-Pushing publishes your *source* code. This transparency aligns with the open-source culture Etter advocates, allowing others to see your build structure and learn from it.
+Relates to Etter's principle **"Use Distributed Version Control"**. Pushing allows others to pull and collaborate on your code seamlessly.
 
-### 9. Update publishconf.py file
-**Action:** Set constant SITEURL to deployment URL in publishconf.py:
+### 9. Create a Branch in Your Repository
+**Action:** Run the following command in your terminal:
+```bash
+git branch -M main
+```
+
+### 10. Push Your Code to the Forge
+**Action:** Run the following command in your terminal:
+```bash
+git push -u origin main
+```
+
+### 11. Update publishconf.py in the Root Directory
+**Action:** Set the constant SITEURL to the deployment url in publishconf.py:
 ```bash
 SITEURL = 'https://USERNAME.github.io/resume/' 
 ```
 
-### 10. Build Your Static Website
+### 12. Build Your Static Website
 **Action:** Generate HTML files from your Markdown source:
 ```bash
 pelican content -s publishconf.py
 ```
-**Context & Principle:**
-This is the "compilation" step. Your Markdown is "built" into a website, aligning with Etter's view of documentation as a product of a build system. `pelican` applies a theme to your text, producing professional HTML in `output/`. This separation allows you to change the site's look by switching themes without touching the content.
-
-### 11. Publish to GitHub Pages
-**Action:** Use `ghp-import` to push the `output` folder to the `gh-pages` branch:
+### 13. Install GitHub Pages Command-Line Interface Tool
+**Action:** Run the following command in your terminal:
 ```bash
 pip install ghp-import
+```
+
+### 14. Publish to GitHub Pages
+**Action:** Use `ghp-import` to push the `output` folder to the `gh-pages` branch:
+```bash
 ghp-import output -b gh-pages -p
 ```
 **Context & Principle:**
-This fulfills the principle to **"Build a Website"**. You are placing your static HTML files on a public server. GitHub Pages serves these for free, giving you a professional, high-performance site without the cost of proprietary hosting.
+This fulfills the principle **"Publish Frequently"**. You use ghp-import to push content to the web quickly. Etter argues that publishing should not be a special event or a challenge. If it takes more than a minute to verify that content is ready for production, the process is broken.
 
-### 12. View deployed site
-**Action:** Open browser and type:
+This step also fulfills Etter's principle **"Rsync"**. While the instructions use ghp-import specifically for GitHub, Etter talks about using tools that only upload files that are updated.
+
+### 15. View the Deployed Site
+**Action:** Open a browser and type:
 ```
 https://USERNAME.github.io/resume/
 ```
+**Context & Principle:**
+This fulfills the principle to **"Build a Website"**. You are placing your static HTML files on a public server. GitHub Pages serves these for free, giving you a professional, high-performance site without the cost of proprietary hosting. This aligns with Etter’s advice that you "should build and host a website, not distribute PDFs" because PDFs become stale immediately, whereas a website allows you to "fix inaccuracies almost instantly."
+
+
 ---
+
+
 
 ## Further Resources
 1.  **[Markdown Tutorial - Basic Syntax](https://commonmark.org/help/tutorial/)**: A comprehensive, third-party tutorial on Markdown syntax.
@@ -135,7 +153,7 @@ https://USERNAME.github.io/resume/
 
 ## Credits
 This guide was produced for Computer Science 2600.
-*   **Author:** Ji Min Ryu 7939825
+*   **Author:** Ji Min Ryu, 7939825
 *   **Peer Review Group:** Jade Lee, Harkeet Bal
 *   **References:**
     *   Etter, Andrew. *Modern Technical Writing*. 2016.
