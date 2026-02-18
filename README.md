@@ -71,7 +71,7 @@ This fulfills Etter's principle **"Catalogue the Diff"**. "Committing" saves a m
 ### 7. Create a Repository on GitHub
 **Action:**  Create a new public repository named `resume` on GitHub.com.
 **Context & Principle:**
-This involves using a **"Forge"** (a website that hosts code). Etter explains forges are the social hubs of development. Hosting your project on a forge makes it accessible, secure, and open for collaboration, moving your resume from a local file to a web project.
+This involves using a **"Forge"** (a website that hosts code). Etter explains "forges are the social hubs of development". Hosting your project on a forge makes it accessible, secure, and open for collaboration, moving your resume from a local file to a web project.
 
 ### 8. Link Your Local Folder to GitHub
 **Action:** Link your local folder to GitHub (replace `USERNAME` with yours):
@@ -116,7 +116,7 @@ pip install ghp-import
 ghp-import output -b gh-pages -p
 ```
 **Context & Principle:**
-This fulfills the principle **"Publish Frequently"**. You use ghp-import to push content to the web quickly. Etter argues that publishing should not be a special event or a challenge. If it takes more than a minute to verify that content is ready for production, the process is broken.
+This fulfills the principle **"Publish Frequently"**. You use ghp-import to push content to the web quickly. Etter argues that "publishing should not be a special event or a challenge". If it takes more than a minute to verify that content is ready for production, the process is broken.
 
 This step also fulfills Etter's principle **"Rsync"**. While the instructions use ghp-import specifically for GitHub, Etter talks about using tools that only upload files that are updated.
 
