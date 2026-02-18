@@ -61,12 +61,7 @@ git init
 **Context & Principle:**
 Etter's principle to **"Use Distributed Version Control"** (Ch 3) is critical. Git creates a rigorous history of your work, allowing you to save "snapshots" (commits). If you make a mistake, you can revert instantly. Unlike "Track Changes," Git facilitates safe experimentation and collaboration without overwriting files.
 
-### 6. Ignore Build Artifacts
-**Action:** Create a `.gitignore` file and add `output/` to it.
-**Context & Principle:**
-Effective version control means knowing what *not* to track. You should only track *source* content, not *generated* output. Since `output/` is created automatically by Pelican, saving it in Git is redundant. This keeps your repository clean.
-
-### 7. Commit Your Changes
+### 6. Commit Your Changes
 **Action:** Save your progress to the repository history:
 ```bash
 git add .
@@ -75,7 +70,7 @@ git commit -m "Initial commit of resume source code"
 **Context & Principle:**
 "Committing" saves a meaningful milestone. By writing a clear message, you document the *history* of your document. This transforms writing from a linear stream into a managed lifecycle where every update is recorded.
 
-### 8. Build Your Static Website
+### 7. Build Your Static Website
 **Action:** Generate HTML files from your Markdown source:
 ```bash
 pelican content
@@ -83,12 +78,12 @@ pelican content
 **Context & Principle:**
 This is the "compilation" step. Your Markdown is "built" into a website, aligning with Etter's view of documentation as a product of a build system. `pelican` applies a theme to your text, producing professional HTML in `output/`. This separation allows you to change the site's look by switching themes without touching the content.
 
-### 9. Create a Repository on GitHub
+### 8. Create a Repository on GitHub
 **Action:**  Create a new public repository named `resume` on GitHub.com:
 **Context & Principle:**
 This involves using a **"Forge"**. Etter explains forges are the social hubs of development. Hosting your project on a forge makes it accessible, secure, and open for collaboration, moving your resume from a local file to a web project.
 
-### 10. Push Your Code to the Forge
+### 9. Push Your Code to the Forge
 **Action:** Link your local folder to GitHub and upload your code (replace `USERNAME` with yours):
 ```bash
 git remote add origin https://github.com/USERNAME/resume.git
@@ -98,7 +93,7 @@ git push -u origin main
 **Context & Principle:**
 Pushing publishes your *source* code. This transparency aligns with the open-source culture Etter advocates, allowing others to see your build structure and learn from it.
 
-### 11. Publish to GitHub Pages
+### 10. Publish to GitHub Pages
 **Action:** Use `ghp-import` to push the `output` folder to the `gh-pages` branch:
 ```bash
 pip install ghp-import
