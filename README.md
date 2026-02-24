@@ -24,13 +24,19 @@ pip install pelican markdown
 Etter advocates for the principle: **"Make Static Websites"** because they are faster, more secure, and easier to host than dynamic systems like WordPress. Unlike dynamic sites requiring databases, Pelican pre-builds your content into standard HTML files. This keeps your writing separate from the server (the computer that hosts your site). By using Pelican, you focus on writing rather than server maintenance.
 
 ### 2. Create a Directory for Your Project
-**Action:** Create a folder named `my-resume` and navigate into it:
+**Action:** Create a folder named `my-resume`:
 ```bash
 mkdir my-resume
 cd my-resume
 ```
 
-### 3. Initialize the Project Structure
+### 3. Navigate to New Directory
+**Action:** Run following command:
+```bash
+cd my-resume
+```
+
+### 4. Initialize the Project Structure
 **Action:** Run the quickstart command:
 ```bash
 pelican-quickstart
@@ -38,7 +44,7 @@ pelican-quickstart
 **Context & Principle:**
 Etter emphasizes **"structure"**. `pelican-quickstart` initializes your project with standard configuration files like `pelicanconf.py`. This aligns with "treating documentation like code." Just as developers use frameworks, technical writers use structured projects. This ensures anyone viewing your project understands where content (`content/`) and settings live, making it maintainable.
 
-### 4. Draft Your Resume Using Markdown
+### 5. Draft Your Resume Using Markdown
 **Action:** Create `resume.md` inside `content/pages` and write your resume using Markdown:
 ```markdown
 Title: Resume
@@ -51,7 +57,7 @@ Date: 2026-02-18
 **Context & Principle:**
 This applies Etter's principle to **"Use Lightweight Markup"**. Binary formats like `.docx` are inefficient for documentation. Markdown is human-readable text that converts easily to HTML. It is future-proof and "diff-able" in version control, allowing you to track line-by-line changes. You strip away formatting distractions to focus on substance, while Pelican handles the styling.
 
-### 5. Initialize a Git Repository (folder)
+### 6. Initialize a Git Repository (folder)
 **Action:** Initialize a Git repository to track your changes:
 ```bash
 git init
@@ -59,7 +65,7 @@ git init
 **Context & Principle:**
 Etter's principle to **"Use Distributed Version Control"** is critical. Git creates a rigorous history of your work, allowing you to save "snapshots" (commits). If you make a mistake, you can revert instantly. Unlike "Track Changes," Git facilitates safe experimentation and collaboration without overwriting files.
 
-### 6. Commit Your Changes
+### 7. Commit Your Changes
 **Action:** Save your progress to the repository history:
 ```bash
 git add .
@@ -68,12 +74,12 @@ git commit -m "Initial commit of resume source code"
 **Context & Principle:**
 This fulfills Etter's principle **"Catalogue the Diff"**. "Committing" saves a meaningful milestone. By writing a clear message, you document the *history* of your document.
 
-### 7. Create a Repository on GitHub
+### 8. Create a Repository on GitHub
 **Action:**  Create a new public repository named `resume` on GitHub.com.
 **Context & Principle:**
 This involves using a **"Forge"** (a website that hosts code). Etter explains "forges are the social hubs of development". Hosting your project on a forge makes it accessible, secure, and open for collaboration, moving your resume from a local file to a web project.
 
-### 8. Link Your Local Folder to GitHub
+### 9. Link Your Local Folder to GitHub
 **Action:** Link your local folder to GitHub (replace `USERNAME` with yours):
 ```bash
 git remote add origin https://github.com/USERNAME/resume.git
@@ -81,36 +87,36 @@ git remote add origin https://github.com/USERNAME/resume.git
 **Context & Principle:**
 Relates to Etter's principle **"Use Distributed Version Control"**. Pushing allows others to pull and collaborate on your code seamlessly.
 
-### 9. Create a Branch in Your Repository
+### 10. Create a Branch in Your Repository
 **Action:** Run the following command in your terminal:
 ```bash
 git branch -M main
 ```
 
-### 10. Push Your Code to the Forge
+### 11. Push Your Code to the Forge
 **Action:** Run the following command in your terminal:
 ```bash
 git push -u origin main
 ```
 
-### 11. Update publishconf.py in the Root Directory
+### 12. Update publishconf.py in the Root Directory
 **Action:** Set the constant SITEURL to the deployment url in publishconf.py:
 ```bash
 SITEURL = 'https://USERNAME.github.io/resume/' 
 ```
 
-### 12. Build Your Static Website
+### 13. Build Your Static Website
 **Action:** Generate HTML files from your Markdown source:
 ```bash
 pelican content -s publishconf.py
 ```
-### 13. Install GitHub Pages Command-Line Interface Tool
+### 14. Install GitHub Pages Command-Line Interface Tool
 **Action:** Run the following command in your terminal:
 ```bash
 pip install ghp-import
 ```
 
-### 14. Publish to GitHub Pages
+### 15. Publish to GitHub Pages
 **Action:** Use `ghp-import` to push the `output` folder to the `gh-pages` branch:
 ```bash
 ghp-import output -b gh-pages -p
@@ -120,7 +126,7 @@ This fulfills the principle **"Publish Frequently"**. You use ghp-import to push
 
 This step also fulfills Etter's principle **"Rsync"**. While the instructions use ghp-import specifically for GitHub, Etter talks about using tools that only upload files that are updated.
 
-### 15. View the Deployed Site
+### 16. View the Deployed Site
 **Action:** Open a browser and type:
 ```
 https://USERNAME.github.io/resume/
