@@ -75,6 +75,7 @@ This fulfills Etter's principle **"Catalogue the Diff"**. "Committing" saves a m
 
 ### 8. Create a Repository on GitHub
 **Action:**  Create a new public repository named `resume` on GitHub.com.
+
 **Context & Principle:**
 This involves using a **"Forge"** (a website that hosts code). Etter explains "forges are the social hubs of development". Hosting your project on a forge makes it accessible, secure, and open for collaboration, moving your resume from a local file to a web project.
 
