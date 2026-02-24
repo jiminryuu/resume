@@ -27,7 +27,6 @@ Etter advocates for the principle: **"Make Static Websites"** because they are f
 **Action:** Create a folder named `my-resume`:
 ```bash
 mkdir my-resume
-cd my-resume
 ```
 
 ### 3. Navigate to New Directory
