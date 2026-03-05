@@ -1,7 +1,7 @@
 # How to Host a Professional Resume Using Pelican and GitHub Pages
 
 ## Statement of Purpose
-This is a simple guide on how to create, format, and host a professional resume website using modern technical writing tools. By following these instructions, you will learn to apply principles from Andrew Etter’s *Modern Technical Writing*, specifically the use of lightweight markup languages, distributed version control, and static site generators. This guide assumes basic command line knowledge but no prior experience with these tools. This guide is for anyone of any skill level interested in hosting static sites.
+This is a simple guide on how to create, format, and host a professional resume website using modern technical writing tools. By following these instructions, you will learn to apply principles from Andrew Etter’s *Modern Technical Writing*, specifically the use of lightweight markup languages, distributed version control, and static site generators. This guide assumes basic command line knowledge but no prior experience with these tools. This guide is for those interested in hosting static sites (any skill level).
 
 ## Prerequisites
 To complete this tutorial, you need the following:
